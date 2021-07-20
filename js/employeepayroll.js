@@ -1,12 +1,6 @@
 class EmployeePayroll{
 
-    //gettert and Settert for id
-    get id() {return this.id;}
-    set id(id){
-        this._id = id;
-    }
-
-    //gettert and Settert for name
+    //getter and Setter for name
     get name() {return this._name;}
     set name(name){
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
@@ -16,40 +10,16 @@ class EmployeePayroll{
             throw "Name is incorrect";
     }
 
-    //gettert and Settert for profilePic
-    get profilePic() {return this._profilePic};
-    set profilrPic(profilePic){
-        this._profilePic = profilePic;
-    }
+    
 
-    //gettert and Settert for gender
-    get gender() {return this._gender;}
-    set gender(gender){
-        this._gender = gender;
-    }
-
-    //gettert and Settert for department
-    get department() {return this._departmetnt;}
-    set department() {
-        this._departmetnt = this.department;
-    }
-
-    //gettert and Settert for note
-    get note() {return this._note;}
-    set note(note){
-        this._note = note;
-    }
-
-    //gettert and Settert for salary
-    get salary() { return this._salary;}
-    set salary(salary){
-        this._salary = salary;
-    }
-
-    //gettert and Settert for startDate
-    get startDate() { return this._startDate;}
+    //getter and Setter for startDate
+    get startDate() {return this.startDate;}
     set startDate(startDate){
-        this._startDate = startDate;
+        let startDateRegex = RegExp('^((0?[1-9]|1[012])[/](0?[1-9]|[12][0-9]|3[01])[/](19|20)?[0-9]{2})*$');
+        if(startDateRegex.test(startDate))
+            this._startDate = startDate;
+        else 
+            throw "Start Date is incorrect";
     }
 
 
